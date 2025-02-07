@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+    Copyright © MageWorx. All rights reserved.
+    See LICENSE.txt for license details.
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Plugin for \Magento\Framework\View\Helper\SecureHtmlRenderer::renderEventListenerAsTag to fix the issue with the double quotes -->
+    <type name="Magento\Framework\View\Helper\SecureHtmlRenderer">
+        <plugin name="mageworx_fix_secure_renderer"
+                type="MageWorx\FixSecureRenderer\Plugin\SecureHtmlRendererPlugin"
+                sortOrder="10"/>
+    </type>
+    <preference for="MageWorx\FixSecureRenderer\Api\EscaperInterface" type="MageWorx\FixSecureRenderer\Model\Escaper"/>
+</config>
